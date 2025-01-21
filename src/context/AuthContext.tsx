@@ -6,6 +6,8 @@ interface User {
   id: string;
   name: string;
   email: string;
+  token: string;
+  username: string;
 }
 
 interface AuthContextType {
@@ -45,8 +47,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       setError(null);
       const response = await api.post('/auth/login', { email, password });
-      setUser(response.data.user);
-      localStorage.setItem('token', response.data.token);
+      setUser(response.data.data);
+      localStorage.setItem('token', response.data.data.token);
     } catch (err) {
       setError(err instanceof AxiosError ? err.response?.data?.message : 'Login failed');
       throw err;

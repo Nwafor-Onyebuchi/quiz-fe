@@ -4,13 +4,16 @@ import {
   HomeIcon,
   UserIcon,
   CogIcon,
+  TableIcon,
 } from '@heroicons/react/outline';
 import Navbar from './Navbar';
 
 const menuItems = [
   { name: 'Dashboard', icon: HomeIcon, path: '/dashboard' },
+  { name: 'Quizes', icon: TableIcon, path: '/dashboard/quizes' },
   { name: 'Profile', icon: UserIcon, path: '/dashboard/profile' },
   { name: 'Settings', icon: CogIcon, path: '/dashboard/settings' },
+
 ];
 
 export default function Sidebar() {
