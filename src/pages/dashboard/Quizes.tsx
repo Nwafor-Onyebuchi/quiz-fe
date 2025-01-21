@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useQuizContext } from '../../context/QuizContext';
 import QuizModal from '../../components/QuizModal';
+import { Link } from 'react-router-dom';
 
 const Quizes = () => {
     const { quizzes, loading, error, fetchQuizzes, clearError } = useQuizContext();
@@ -45,9 +46,9 @@ const Quizes = () => {
                             <td className="py-2 text-sm px-4 border-b">{quiz.title}</td>
                             <td className="py-2 text-sm px-4 border-b">{quiz.description}</td>
                             <td className="py-2 px-4 border-b flex justify-center items-center">
-                                <button className="text-blue-500 text-sm hover:underline">View</button>
-                                <button className="text-yellow-500 text-sm hover:underline mx-2">Edit</button>
-                                <button className="text-red-500 text-sm hover:underline">Delete</button>
+                                <Link to={`/dashboard/quizes/${quiz._id}`} className="text-blue-500 hover:underline">View</Link>
+                                <button className="text-yellow-500 hover:underline mx-2">Edit</button>
+                                <button className="text-red-500 hover:underline">Delete</button>
                             </td>
                         </tr>
                     ))}

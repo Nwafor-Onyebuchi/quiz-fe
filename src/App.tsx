@@ -10,6 +10,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Profile from './pages/dashboard/Profile';
 import Settings from './pages/dashboard/Settings';
 import Quizes from './pages/dashboard/Quizes';
+import QuizDetails from './pages/dashboard/QuizDetails'; // Import QuizDetails
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="profile" element={<Profile />} />
               <Route path="settings" element={<Settings />} />
               <Route path="quizes" element={<Quizes />} />
+              <Route path="quizes/:id" element={<QuizDetails />} /> {/* Add route for QuizDetails */}
             </Route>
           </Routes>
         </BrowserRouter>
